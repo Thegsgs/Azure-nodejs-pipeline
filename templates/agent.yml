@@ -1,7 +1,5 @@
- variables: 
-  agentName: 'Simons-MacBook-Pro'
- pool:
+pool:
   name: 'Default'
   demands:
-    - agent.name -equals $(agentName)
+    - agent.name -equals 'Simons-MacBook-Pro'
 
