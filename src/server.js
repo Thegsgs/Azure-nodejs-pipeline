@@ -1,37 +1,14 @@
-const express = require('express');
-const path = require('path');
-const utils = require('./utils');
+const express = require("express");
+const app = express();
 
-// fn to create express server
-const create = async () => {
+app.get("/", (request, response) => {
+    response.send("Hi there");
+});
 
-    // server
-    const app = express();
-    
-    // Log request
-    app.use(utils.appLogger);
+app.get("/about", (request, response) => {
+    response.send("<h1>About</h1>");
+});
 
-    // root route - serve static file
-    app.get('/api/hello', (req, res) => {
-        res.json({hello: 'goodbye'});
-        res.end();
-    });
-
-    // root route - serve static file
-    app.get('/', (req, res) => {
-        return res.sendFile(path.join(__dirname, '../public/client.html'));
-
-    });
-
-    // Catch errors
-    app.use(utils.logErrors);
-    app.use(utils.clientError404Handler);
-    app.use(utils.clientError500Handler);
-    app.use(utils.errorHandler);
-
-    return app;
-};
-
-module.exports = {
-    create
-};
+app.listen(3000, () => {
+    console.log("Listen on the port 3000...");
+});
