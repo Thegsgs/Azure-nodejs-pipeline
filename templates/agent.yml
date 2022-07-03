@@ -1,4 +1,5 @@
-name: 'Default'
-demands:
-  - agent.name -equals 'Simons-MacBook-Pro'
+pool:
+  name: 'Default'
+  demands:
+  - agent.name -equals $(agentName)
 
