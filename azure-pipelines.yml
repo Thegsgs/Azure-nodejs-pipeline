@@ -7,7 +7,4 @@ variables:
 jobs:
 - template: templates/jobs.yml
 
-steps:
-- template: templates/npm-steps.yml
-
 
