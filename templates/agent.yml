@@ -1,5 +1,0 @@
-pool:
-  name: 'Default'
-  demands:
-  - agent.name -equals $(agentName)
-

@@ -1,0 +1,11 @@
+jobs:
+- job: Node
+  pool:
+    name: 'Default'
+    demands:
+    - agent.name -equals $(agentName) 
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'

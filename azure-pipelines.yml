@@ -4,8 +4,8 @@ trigger:
 variables: 
 - template: templates/variables.yml
 
-pool:
-- template: templates/agent.yml
+jobs:
+- template: templates/jobs.yml
 
 steps:
 - template: templates/npm-steps.yml
