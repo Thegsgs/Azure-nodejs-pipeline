@@ -4,5 +4,5 @@ jobs:
     name: 'Default'
     demands:
     - agent.name -equals $(agentName) 
-steps:
-- template: npm-steps.yml
+  steps:
+  - template: npm-steps.yml
