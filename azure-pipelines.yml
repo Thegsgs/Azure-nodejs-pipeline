@@ -1,24 +1,10 @@
 trigger:
 - main
 
-pool: 
- name: 'Default'
- demands:
-  - agent.name -equals $(agentName)
-
-variables: 
-  agentName: 'Simons-MacBook-Pro'
+pool:
+- template: templates/agent.yml
 
 steps:
-- template: build-parameters.yml
-  parameters: 
-    yesNo: false 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+- template: templates/npm-steps.yml
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+
