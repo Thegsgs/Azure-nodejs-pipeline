@@ -12,7 +12,7 @@ variables:
 steps:
 - template: build-parameters.yml
   parameters: 
-    yesNo: true 
+    yesNo: false 
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
